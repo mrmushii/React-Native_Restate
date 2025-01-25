@@ -29,7 +29,7 @@ const SignIn = () => {
             </Text>
             <Text className='text-lg font-rubik text-black-200 text-center mt-12'>Login to ReState with Google</Text>
             <TouchableOpacity onPress={handleLogin} className='bg-white shadow-md shadow-zinc-300 rounded-full w-full py-4 mt-5'>
-              <View className='flex flex-row items-center justify-center items-center'>
+              <View className='flex flex-row items-center justify-center '>
                 <Image source={icons.google} className='w-5 h-5' resizeMode='contain'/>
                 <Text className='text-lg font-rubik-medium text-black-300 ml-2'>Continue with Google</Text>
               </View>

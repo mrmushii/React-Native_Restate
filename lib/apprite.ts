@@ -1,4 +1,5 @@
 import {Account, Avatars, Client, OAuthProvider} from "react-native-appwrite";
+import * as AuthSession from 'expo-auth-session';
 import * as Linking from 'expo-linking';
 export const config = {
   plateform:'com.mush.restate',
@@ -23,7 +24,7 @@ export async function login(){
     const response = await account.createOAuth2Token(OAuthProvider.Google,redirectUri);
 
     if(!response) throw new Error("Failed To login");
-    const browserResult = await openAuthSessionAsync(
+    const browserResult = await AuthSession.openAuthSessionAsync(
       response.toString(),
       redirectUri
     )
@@ -62,7 +63,7 @@ export async function logout() {
   }
 }
 
-export async function getUser() {
+export async function getCurrentUser() {
   try {
     const response = await account.get();
     if(response.$id){
